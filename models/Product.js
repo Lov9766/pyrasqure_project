@@ -4,17 +4,17 @@ const ProductSchema = mongoose.Schema(
   {
     title: {
       typeq: String,
-      require: true,
+      required: true,
       unique: true,
     },
     desc: {
       type: String,
-      require: true,
+      required: true,
      
     },
     image: {
       type: String,
-      require: true,
+      required: true,
     },
     categories: {
       type: Array,

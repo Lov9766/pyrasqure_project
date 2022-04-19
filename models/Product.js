@@ -3,14 +3,13 @@ const mongoose = require("mongoose");
 const ProductSchema = mongoose.Schema(
   {
     title: {
-      typeq: String,
+      type: String,
       required: true,
       unique: true,
     },
     desc: {
       type: String,
       required: true,
-     
     },
     image: {
       type: String,
@@ -18,18 +17,15 @@ const ProductSchema = mongoose.Schema(
     },
     categories: {
       type: Array,
-      
     },
     size: {
       type: String,
     },
     color: {
       type: String,
-      
     },
     price: {
       type: Number,
-        require: true,
     },
   },
   {

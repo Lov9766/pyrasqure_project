@@ -5,12 +5,15 @@ const jwt = require("jsonwebtoken");
 
 router.post("/register", async (req, res) => {
   try {
+console.log("lov")
+    const user1 = req.body.password;
     const user = new User({
       username: req.body.username,
       email: req.body.email,
       // password: req.body.password,
+      conformpassword: user1,
       password: cryptoJS.AES.encrypt(
-        req.body.password,
+        user1,
         process.env.SECRET_KEY
       ).toString(),
     });
@@ -23,39 +26,49 @@ router.post("/register", async (req, res) => {
   // console.log(enc);
 });
 
-  //LOGIN
 
-  router.post("/login", async (req, res) => {
-    try {
-      const user = await User.findOne({ username: req.body.username });
 
-      !user && res.status(404).send("User not found");
-      // console.log(x);
-      // const user = await User.find({});
-      const originalpassword = cryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY).toString(cryptoJS.enc.Utf8);
+//LOGIN
 
-      originalpassword !== req.body.password &&
-        res.status(401).send("Wrong password");
+router.post("/login", async (req, res) => {
+  try {
+    console.log(req.body.username);
+    const user = await User.findOne({
+      username: req.body.username,
+    });
 
-      const acessToken = jwt.sign({
+    !user ? res.status(404).send("User id is required") : null;
+    // console.log(x);
+    // const user = await User.find({});
+    const originalpassword = cryptoJS.AES.decrypt(
+      user.password,
+
+      process.env.SECRET_KEY
+    ).toString(cryptoJS.enc.Utf8);
+    // console.log(originalpassword);
+    originalpassword !== req.body.password
+      ? res.status(401).send("Wrong password")
+      : null;
+
+    const acessToken = jwt.sign(
+      {
         id: user._id,
         isAdmin: user.isAdmin,
-  
-      }, process.env.WEB_TOKEN, {
-        expiresIn: "1d"
-      });
-     
-      const { password, ...other } = user._doc;
-      res.status(201).send({ ...other, acessToken });
-      
-      
+      },
+      process.env.WEB_TOKEN
+    );
+    console.log(user);
+    const { password, ...other } = user._doc;
+    res.status(201).send({ ...other, acessToken });
 
-      // console.log(password);
+    // console.log(password);
 
-      // const password = cryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY).toString(cryptoJS.enc.Utf8);
-    } catch (err) {
-      res.status(500).send("Error in finding user");
-    }
-  });
-  
+    // const password = cryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY).toString(cryptoJS.enc.Utf8);
+  } catch (err) {
+    res.status(500).send("Error in finding user");
+  }
+});
+
+
+
 module.exports = router;

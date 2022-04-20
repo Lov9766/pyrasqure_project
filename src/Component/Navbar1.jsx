@@ -6,8 +6,8 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 
 const Container = styled.div`
-  height: 60px;
-  background-color: rgb(154, 222, 245);
+  height: 80px;
+  background-color: rgb(239, 243, 245);
   /* background-color:black;  */
 `;
 const Wrapper = styled.div`
@@ -28,7 +28,7 @@ const Language = styled.span`
 `;
 const SearchContainer = styled.div`
   border: 0.5px solid lightgray;
-  display:flex;
+  display:flex;  
 align-items: center;
 margin-left:25px;
 padding: 5px;
@@ -36,6 +36,8 @@ padding: 5px;
 
 const Input = styled.input`
     border: none;
+    height: 25px;
+    width: 250px;
 `;
 const Center = styled.div`
   flex: 1;
@@ -43,9 +45,18 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-      text-shadow: -2px 1px 3px rgba(0,0,0,0.71);
-
+      /* text-shadow: -2px 1px 3px rgba(0,0,0,0.71); */
+display: flex;
+flex-direction:row;
+justify-content: center;
 `;
+const Img = styled.img`
+  width: 10%;
+  /* height: rem; */
+  
+  
+ 
+  `;
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -71,19 +82,22 @@ const Navbar = () => {
           <Language>EN</Language>
           <SearchContainer>
             <Input></Input>
-            <SearchIcon style={{color:"grey",fontSize:"16px" }}/>
+            <SearchIcon style={{ color: "grey", fontSize: "16px" }} />
           </SearchContainer>
         </Left>
 
         <Center>
-          <Logo>PYRA JWELS</Logo>
+          <Logo>
+            <Img src="./image/12.png"></Img>
+          </Logo>
+          <span> 𝐏𝐘𝐑𝐀 𝐉𝐄𝐖𝐄𝐋𝐒</span>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGNIN</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
-             <ShoppingCartOutlinedIcon/>
+              <ShoppingCartOutlinedIcon />
             </Badge>
           </MenuItem>
         </Right>

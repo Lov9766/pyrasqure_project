@@ -7,6 +7,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Container = styled.div`
   height: 60px;
+  background-color: rgb(154, 222, 245);
   /* background-color:black;  */
 `;
 const Wrapper = styled.div`
@@ -41,9 +42,10 @@ const Center = styled.div`
   text-align: center;
 `;
 
-const Logo=styled.h1`
-    
-`
+const Logo = styled.h1`
+      text-shadow: -2px 1px 3px rgba(0,0,0,0.71);
+
+`;
 const Right = styled.div`
   flex: 1;
   display: flex;

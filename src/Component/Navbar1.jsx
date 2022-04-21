@@ -24,6 +24,7 @@ const Left = styled.div`
 
 const Language = styled.span`
   font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
 `;
 const SearchContainer = styled.div`
@@ -31,13 +32,14 @@ const SearchContainer = styled.div`
   display:flex;  
 align-items: center;
 margin-left:25px;
-padding: 5px;
+padding: 0px;
 `;
 
 const Input = styled.input`
     border: none;
-    height: 25px;
-    width: 250px;
+    height: 23px;
+    width: 300px;
+    padding: 5px;
 `;
 const Center = styled.div`
   flex: 1;
@@ -50,6 +52,8 @@ display: flex;
 flex-direction:row;
 justify-content: center;
 `;
+const Text = styled.span`
+  font-size: 20px;`;
 const Img = styled.img`
   width: 10%;
   /* height: rem; */
@@ -66,6 +70,7 @@ const Right = styled.div`
 
 const MenuItem = styled.div`
 font-size: 14px;
+font-weight: bold;
 margin-left: 25px;
 cursor: pointer;
 
@@ -81,8 +86,9 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            <Input></Input>
-            <SearchIcon style={{ color: "grey", fontSize: "16px" }} />
+            <Input>
+            </Input>
+            <SearchIcon style={{ color: "grey", fontSize: "30px", height:"30px" ,cursor:"pointer" }} />
           </SearchContainer>
         </Left>
 
@@ -90,7 +96,7 @@ const Navbar = () => {
           <Logo>
             <Img src="./image/12.png"></Img>
           </Logo>
-          <span> 𝐏𝐘𝐑𝐀 𝐉𝐄𝐖𝐄𝐋𝐒</span>
+          <Text> 𝐏𝐘𝐑𝐀 𝐉𝐄𝐖𝐄𝐋𝐒</Text>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>

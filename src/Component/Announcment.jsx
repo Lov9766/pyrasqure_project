@@ -18,10 +18,12 @@ font-weight: 500;
 
 const Announcment = () => {
   return (
-    <Announcment1>Super 
-      Deal Shop more than Rs 5000/- get 30% off
+    <Announcment1>
+      <marquee behavior="scroll" direction="right">
+        Super Deal Shop more than Rs 5000/- get 30% off
+      </marquee>
     </Announcment1>
-  )
+  );
 }
 
 export default Announcment

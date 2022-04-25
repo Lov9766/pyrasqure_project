@@ -44,19 +44,9 @@ const Slide = styled.div`
   align-items: center;
   background: #${(props) => props.bg};
 `;
-<<<<<<< HEAD
-const Wrapper = styled.div``;
-const Slide = styled.div`
-display: flex;
-align-items: center;
-`;
-
-const ImgContainer = styled.div`
-=======
 
 const ImgContainer = styled.div`
 height:100%;
->>>>>>> refs/remotes/origin/branch1
 flex: 1;
 `;
 const Image = styled.img`
@@ -85,15 +75,6 @@ color:black;
 cursor: pointer;
 font-size: 20px;
 `;
-<<<<<<< HEAD
-const InfoContainer = styled.div`
-flex:1
-`;
-// const Container = styled.div``;
-// const Container = styled.div``;
-// const Container = styled.div``;
-=======
->>>>>>> refs/remotes/origin/branch1
 
 
 const Slider = () => {
@@ -115,20 +96,12 @@ const [sildeIndex,SetsildeIndex]=useState(0);
 
           <Slide bg={ item.bg}>
           <ImgContainer>
-<<<<<<< HEAD
-            <Image src="image/Slider.png" />
-          </ImgContainer>
-          <InfoContainer>
-
-            
-=======
             <Image src={item.image}/>
           </ImgContainer>
           <InfoContainer>
             <Title>{item.title}</Title>
             <Desc> {item.desc}</Desc>
             <Button>Click Me</Button>
->>>>>>> refs/remotes/origin/branch1
           </InfoContainer>
         </Slide>
           ))}

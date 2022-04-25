@@ -29,13 +29,20 @@ const Arrow = styled.div`
   opacity: 0.5;
 `;
 const Wrapper = styled.div``;
-const Slide = styled.div``;
+const Slide = styled.div`
+display: flex;
+align-items: center;
+`;
 
-const ImgContainer = styled.div``;
+const ImgContainer = styled.div`
+flex: 1;
+`;
 const Image = styled.img`
 width: 100%;
 `;
-const InfoContainer = styled.div``;
+const InfoContainer = styled.div`
+flex:1
+`;
 // const Container = styled.div``;
 // const Container = styled.div``;
 // const Container = styled.div``;
@@ -50,9 +57,12 @@ const Slider = () => {
       <Wrapper>
         <Slide>
           <ImgContainer>
-            <Image src="https://banner.caratlane.com/live-images/b89c7dce327647e6848cad64b3cab76e.gif" />
+            <Image src="image/Slider.png" />
           </ImgContainer>
-          <InfoContainer></InfoContainer>
+          <InfoContainer>
+
+            
+          </InfoContainer>
         </Slide>
       </Wrapper>
       <Arrow direction="right">

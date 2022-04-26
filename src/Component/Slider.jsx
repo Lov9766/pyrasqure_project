@@ -49,11 +49,11 @@ const Slide = styled.div`
 
 const ImgContainer = styled.div`
 height:100%;
-flex: 1;
+/* flex: 1; */
 `;
 const Image = styled.img`
   height: 80%;
-  /* width: 100vw; */
+  width: 100vw;
   /* margin-bottom: 10px;
   margin-top: 10px; */
 `;
@@ -104,11 +104,11 @@ const [sildeIndex,SetsildeIndex]=useState(0);
           <ImgContainer>
             <Image src={item.image}/>
           </ImgContainer>
-          <InfoContainer>
+          {/* <InfoContainer>
             <Title>{item.title}</Title>
             <Desc> {item.desc}</Desc>
             <Button>Click Me</Button>
-          </InfoContainer>
+          </InfoContainer> */}
         </Slide>
           ))}
       

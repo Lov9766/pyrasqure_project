@@ -31,11 +31,12 @@ const Arrow = styled.div`
   z-index: 2;
 `;
 const Wrapper = styled.div`
-height: 100%;
-display: flex;
-/* flex-direction: row; */
-transform: translateX(${props => props.sildeIndex * -100}vw);
-transition: all 1s ease;
+  height: 100%;
+  display: flex;
+  /* flex-direction: row; */
+  transform: translateX(${(props) => props.sildeIndex * -100}vw);
+  transition: all 1s ease;
+  border: 1px solid #8b8a8a;
 `;
 const Slide = styled.div`
   height: 100vh;
@@ -43,6 +44,7 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background: #${(props) => props.bg};
+
 `;
 
 const ImgContainer = styled.div`
@@ -50,8 +52,10 @@ height:100%;
 flex: 1;
 `;
 const Image = styled.img`
-height:80%;
-
+  height: 80%;
+  /* width: 100vw; */
+  /* margin-bottom: 10px;
+  margin-top: 10px; */
 `;
 const InfoContainer = styled.div`
 padding: 50px;
@@ -59,6 +63,8 @@ flex: 1;
 `;
 const Title = styled.h1`
 font-size: 70px;
+
+
 `;
 const Desc = styled.p`
 margin:50px 0px;

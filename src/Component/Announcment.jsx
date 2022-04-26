@@ -20,7 +20,7 @@ const Announcment = () => {
   return (
     <Announcment1>
       <marquee behavior="scroll" direction="right">
-        Super Deal Shop more than Rs 5000/- get 30% off
+        Super Deal Shop more than Rs 5000/- get 20% off
       </marquee>
     </Announcment1>
   );
